@@ -23,13 +23,11 @@ class BarangRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = ['namabarang' => 'required|string|max:255',
+        return ['namabarang' => 'required|string|max:255',
                 'idjenis' => 'required',
                 'jumlah' => 'required',
                 'idsupplier' => 'required',
                 'foto' => 'sometimes|nullable|image|mimes:jpeg,jpg,png|max:500'];
-
-        return $rules;
     }
 }
 

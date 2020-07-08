@@ -102,4 +102,22 @@ class BarangController extends Controller
             Storage::disk('foto')->delete($barang->foto);
         }
     }
+
+    public function cari(Request $request) {
+        $kata_kunci = trim($request->input('kata_kunci'));
+
+        if (! empty($kata_kunci)) {
+            // Query
+            $query = Barang::where('namabarang', 'LIKE', '%' . $kata_kunci . '%');
+
+            $barang_list = $query->paginate(2);
+
+            $pagination = $barang_list->appends(['kata_kunci' => $kata_kunci]);
+
+            $jumlah_barang = $barang_list->total();
+            return view('barang.index', compact('barang_list', 'kata_kunci', 'pagination', 'jumlah_barang'));
+        }
+
+        return redirect('barang');
+    }
 }

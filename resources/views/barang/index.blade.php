@@ -39,7 +39,7 @@
                                     {{ link_to('barang/' . $barang->idbarang . '/edit', 'Edit', ['class' => 'btn btn-warning btn-sm']) }}
                                 </div>
                                 <div class="box-button">
-                                    {!! Form::open(['method' => 'DELETE', 'action' => ['SiswaController@destroy', $barang->idbarang]]) !!}
+                                    {!! Form::open(['method' => 'DELETE', 'action' => ['BarangController@destroy', $barang->idbarang]]) !!}
                                     {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
                                     {!! Form::close() !!}
                                 </div>
