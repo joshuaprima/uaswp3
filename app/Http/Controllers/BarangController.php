@@ -59,7 +59,7 @@ class BarangController extends Controller
         $barang->delete();
         Session::flash('flash_message', 'Data barang berhasil dihapus.');
         Session::flash('penting', true);
-        return redirect('supplier');
+        return redirect('barang');
     }
 
     private function uploadFoto(BarangRequest $request) {

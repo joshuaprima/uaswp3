@@ -24,7 +24,6 @@ class BarangRequest extends FormRequest
     public function rules()
     {
         $rules = ['namabarang' => 'required|string|max:255',
-                'kota' => 'required|string|max:100',
                 'idjenis' => 'required',
                 'jumlah' => 'required',
                 'idsupplier' => 'required',
