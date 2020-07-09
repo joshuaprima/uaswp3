@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Barang;
 use App\Http\Requests\BarangRequest;
 use Session;
+use Storage;
 
 class BarangController extends Controller
 {

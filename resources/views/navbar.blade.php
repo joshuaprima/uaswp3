@@ -41,6 +41,14 @@
         @endif
       @endif
 
+        @if (Auth::check() && Auth::user()->level == 'admin')
+            @if (!empty($halaman) && $halaman == 'user')
+                <li class="active"><a href="{{ url('user') }}">User <span class="sr-only">(current)</span></a></li>
+            @else
+                <li><a href="{{ url('user') }}">User</a></li>
+            @endif
+        @endif
+
       {{-- About --}}
       @if (!empty($halaman) && $halaman == 'about')
         <li class="active"><a href="{{ url('about') }}">About <span class="sr-only">(current)</span></a></li>
